@@ -1,0 +1,18 @@
+html, body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafc;
+  height: 100%;
+}
+
+.textspan {
+  color: #99a9bf;
+  padding: 10px 15px;
+  float: right;
+  font-size: 14px;
+}
+
+.queryinput {
+  width: 90%;
+}
