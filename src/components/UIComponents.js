@@ -40,33 +40,43 @@ Vue.use(ElementUI)
 //   Dialog
 // } from 'element-ui'
 
-// Vue.use(Row)
-// Vue.use(Col)
-// Vue.use(Icon)
-// Vue.use(Button)
-// Vue.use(Radio)
-// Vue.use(RadioGroup)
-// Vue.use(Checkbox)
-// Vue.use(CheckboxGroup)
-// Vue.use(Input)
-// Vue.use(Select)
-// Vue.use(Option)
-// Vue.use(TimePicker)
-// Vue.use(DatePicker)
-// Vue.use(Form)
-// Vue.use(FormItem)
-// Vue.use(Table)
-// Vue.use(TableColumn)
-// Vue.use(Progress)
-// Vue.use(Pagination)
-// Vue.use(Alert)
-// Vue.use(Loading)
-// Vue.use(Message)
-// Vue.use(MessageBox)
-// Vue.use(Notification)
-// Vue.use(Menu)
-// Vue.use(Submenu)
-// Vue.use(MenuItem)
-// Vue.use(Breadcrumb)
-// Vue.use(BreadcrumbItem)
-// Vue.use(Dialog)
+// const components = [
+//   Row,
+//   Col,
+//   Icon,
+//   Button,
+//   Radio,
+//   RadioGroup,
+//   Checkbox,
+//   CheckboxGroup,
+//   Input,
+//   Select,
+//   Option,
+//   TimePicker,
+//   DatePicker,
+//   Form,
+//   FormItem,
+//   Table,
+//   TableColumn,
+//   Progress,
+//   Pagination,
+//   Alert,
+//   Loading,
+//   Message,
+//   MessageBox,
+//   Notification,
+//   Menu,
+//   Submenu,
+//   MenuItem,
+//   Breadcrumb,
+//   BreadcrumbItem,
+//   Dialog
+// ]
+
+// components.forEach((item) => {
+//   Vue.component(item.name, item)
+// })
+
+// 解决组件自动弹出问题
+// Vue.prototype.$message = Message
+// Vue.prototype.$notify = Notification
