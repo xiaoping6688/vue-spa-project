@@ -83,9 +83,9 @@ var webpackConfig = merge(baseWebpackConfig, {
       chunks: ['vendor']
     }),
     new DeployPlugin({
-      "receiver": "http://180.76.158.132:8999/receiver", // optional, deploy to local directory when omitted
-      "staticDir": "/data/platServer/webapps/jwxt", // .js,.css,images will end up here
-      "tplDir": "/data/platServer/webapps/jwxt" // .html ends up here
+      "receiver": "http://ip:8999/receiver", // optional, deploy to local directory when omitted
+      "staticDir": "/data/webapps", // .js,.css,images will end up here
+      "tplDir": "/data/webapps" // .html ends up here
     })
   ]
 })
