@@ -2,8 +2,9 @@
  * 接口配置
  */
 
-// const BaseUrl = 'http://www/api'
-const BaseUrl = '' // for local proxy
+// const BaseUrl = 'http://www/api' // for production
+// const BaseUrl = '' // for local poxy
+const BaseUrl = '/mock' // for local mock test
 
 export const LOGIN = BaseUrl + '/edu_rest/org_login' // 登录
 export const REGIST = BaseUrl + '/edu_rest/org_register' // 注册

@@ -2,6 +2,7 @@ require('./check-versions')()
 var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 var path = require('path')
+var fs = require('fs')
 var express = require('express')
 var webpack = require('webpack')
 var opn = require('opn')
@@ -42,6 +43,13 @@ Object.keys(proxyTable).forEach(function (context) {
     options = { target: options }
   }
   app.use(proxyMiddleware(context, options))
+})
+
+// mock data
+var mockDir = path.resolve(__dirname, '../mock')
+fs.readdirSync(mockDir).forEach(function (file) {
+  var mock = require(path.resolve(mockDir, file))
+  app.use(mock.api, mock.response)
 })
 
 // handle fallback for HTML5 history API

@@ -1,7 +1,7 @@
 {
-  "name": "vue-project-demo",
+  "name": "vue-spa-project",
   "version": "1.0.0",
-  "description": "教务系统 Demo",
+  "description": "基于Vue.js技术栈的教务管理系统 Demo",
   "author": "super_xp@126.com",
   "private": true,
   "scripts": {
@@ -56,6 +56,7 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "faker": "^4.0.0",
     "file-loader": "^0.9.0",
     "friendly-errors-webpack-plugin": "^1.1.2",
     "function-bind": "^1.1.0",
