@@ -1,5 +1,5 @@
 # vue-spa-project
-> 基于vue.js技术栈，采用MVC等分层结构设计、数据解耦设计、组件化设计和自动构建的单页应用项目Demo。
+> 基于vue.js技术栈，采用MVC等分层结构设计、数据解耦设计、组件化设计和自动构建的单页应用项目。
 
 技术栈
 
@@ -30,16 +30,10 @@ npm run dev
 # build for production with minification
 npm run build
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
+# run all tests for unit test and e2e test
 npm test
 
-# check update for npm packages, please install 'npm install ncu -g' first
+# check update for npm packages, please install 'npm install ncu -g' at first
 npm run update
 ```
 
