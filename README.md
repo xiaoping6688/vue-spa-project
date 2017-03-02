@@ -10,7 +10,7 @@
 - element-ui（基于vue的PC端UI组件库）
 
 
-基于Webpack自动化
+Webpack（自动构建）
 
 - Babel预编译（ES6、SCSS等），和异步组件实现路由懒加载
 - ESlint代码质量控制，所有代码编写必须按照标准规范才能通过编译，并避免一些低级错误
