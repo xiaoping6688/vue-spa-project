@@ -34,7 +34,7 @@ npm run build
 # run all tests for unit test and e2e test
 npm test
 
-# check update for npm packages, please install 'npm install ncu -g' at first
+# check update for npm packages, please install 'npm install npm-check-updates -g' at first
 npm run update
 ```
 
