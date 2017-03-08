@@ -1,9 +1,19 @@
 {
   "name": "vue-spa-project",
   "version": "1.0.0",
-  "description": "基于Vue.js技术栈的教务管理系统 Demo",
+  "description": "基于Vue.js技术栈的管理系统 Demo",
   "author": "super_xp@126.com",
-  "private": true,
+  "keywords": [
+    "vue.js",
+    "spa",
+    "vue-demo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaoping6688/vue-spa-project"
+  },
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
