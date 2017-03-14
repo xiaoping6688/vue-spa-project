@@ -6,7 +6,7 @@ export default class SubjectVO {
   constructor (data) {
     data = data || {}
 
-    this.id = data.id || ''
-    this.name = data.name || ''
+    this.id = data.subject_id || ''
+    this.name = data.subject_name || ''
   }
 }

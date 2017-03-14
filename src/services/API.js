@@ -24,25 +24,8 @@ export const GET_REGION_TEACHERS = BaseUrl + '/edu_rest/acquire_teacher_by_org' 
 export const GET_TEACHERS = BaseUrl + '/edu_rest/acquire_teacher' // 获取教师 辅导老师？
 export const ADD_TEACHER = BaseUrl + '/edu_rest/establish_teacher' // 添加教师
 
-export const GET_CLASSTYPES = BaseUrl + '/edu_rest/acquire_class_type' // 获取班型
-export const ADD_CLASSTYPE = BaseUrl + '/edu_rest/establish_class_type' // 添加班型
-
-export const GET_CLASSES = BaseUrl + '/edu_rest/acquire_class_info' // 获取班级
-export const ADD_CLASS = BaseUrl + '/edu_rest/establish_class' // 添加班级
-export const GET_CLASS_TEACHERS = BaseUrl + '/edu_rest/acquire_class_teacher' // 获取班级主讲教师
-
 export const GET_SUBJECTS = BaseUrl + '/edu_rest/acquire_subject' // 获取科目
 export const ADD_SUBJECT = BaseUrl + '/edu_rest/establish_subject' // 添加科目
-
-export const GET_COURSES = BaseUrl + '/edu_rest/acquire_course' // 获取课程
-export const ADD_COURSE = BaseUrl + '/edu_rest/establish_course' // 添加课程
-
-export const GET_STUDENTS = BaseUrl + '/edu_rest/acquire_stu_info' // 获取学生
-export const QUERY_STUDENTS = BaseUrl + '/edu_rest/acquire_stuinfo_number_name' // 根据条件（学号、学名）获取学生信息
-export const ADD_STUDENT = BaseUrl + '/edu_rest/establish_stu' // 添加学生
-export const PURCHASE_COURSE = BaseUrl + '/edu_rest/purchase_course' // 购买课程
-
-export const GET_PURCHASES = BaseUrl + '' // 获取购课信息
 
 export const GET_YEARS = BaseUrl + '/edu_rest/acquire_year' // 获取年份
 export const GET_TERMS = BaseUrl + '/edu_rest/acquire_term' // 获取学期

@@ -6,7 +6,7 @@ export default class SchoolVO {
   constructor (data) {
     data = data || {}
 
-    this.id = data.id || ''
-    this.name = data.name || ''
+    this.id = data.school_id || ''
+    this.name = data.school_name || ''
   }
 }

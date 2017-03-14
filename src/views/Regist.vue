@@ -87,8 +87,8 @@ export default {
           ]
           this.$store.dispatch('regist', args).then(() => {
             this.$router.push('/main')
-          }, msg => {
-            this.$message.error(msg)
+          }, err => {
+            this.$message.error(err.message)
           })
         }
       })
@@ -103,11 +103,11 @@ export default {
 <style scoped>
 .regist {
   position: absolute;
-  width: 300px;
+  width: 360px;
   height: 360px;
   background-color: #FFFFFF;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   margin: auto;
   top: 0;
   left: 0;
@@ -118,4 +118,6 @@ export default {
 .logo {
   text-align: center;
 }
+
+
 </style>

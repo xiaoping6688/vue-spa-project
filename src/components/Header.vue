@@ -3,7 +3,7 @@
  */
 
 <template>
-  <div class="header">
+  <header class="header">
     <el-menu theme="dark" mode="horizontal" class="menu" @select="handleSelect">
       <el-row type="flex" justify="space-between">
         <el-col :span="1">
@@ -16,7 +16,7 @@
         </el-col>
       </el-row>
     </el-menu>
-  </div>
+  </header>
 </template>
 
 <script>

@@ -70,8 +70,8 @@ export default {
           ]
           this.$store.dispatch('login', args).then(() => {
             this.$router.push('/main')
-          }, msg => {
-            this.$message.error(msg)
+          }, err => {
+            this.$message.error(err.message)
           })
         }
       })
@@ -86,11 +86,11 @@ export default {
 <style scoped>
 .login {
   position: absolute;
-  width: 300px;
+  width: 360px;
   height: 300px;
   background-color: #FFFFFF;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   margin: auto;
   top: 0;
   left: 0;

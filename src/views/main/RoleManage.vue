@@ -2,7 +2,7 @@
   <div>
     <c-breadcrumb :items="breadcrumb"></c-breadcrumb>
     <div>
-      <el-row>
+      <el-row type="flex" :gutter="10">
         <el-col :span="2"><span class="textspan">角色</span></el-col>
         <el-col :span="4">
           <el-input placeholder="请输入角色" v-model="roleinput" class="queryinput"></el-input>
@@ -89,11 +89,11 @@ export default {
     roleService.getRoles(this.$store.state.account.userId).then(data => {
       this.roleDataLoading = false
       this.roleData = data
-    }, msg => {
+    }, err => {
       this.roleDataLoading = false
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
   },
@@ -120,8 +120,8 @@ export default {
             role.name = this.addRoleForm.name
             this.roleData.push(role)
             this.addRoleForm.isLoading = false
-          }, msg => {
-            this.$message.error(msg)
+          }, err => {
+            this.$message.error(err.message)
             this.addRoleForm.isLoading = false
           })
         } else {

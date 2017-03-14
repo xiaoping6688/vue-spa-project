@@ -4,7 +4,7 @@
 
 <template>
   <el-breadcrumb separator="/" class="breadcrumb">
-    <el-breadcrumb-item v-for="item in items" :to="item.path">{{ item.label }}</el-breadcrumb-item>
+    <el-breadcrumb-item v-for="item in items" :to="item.path" :key="item.label">{{ item.label }}</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 

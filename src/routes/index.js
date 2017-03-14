@@ -13,16 +13,9 @@ const NotFound = resolve => require(['../views/NotFound'], resolve)
 // 组件按组分块
 const Home = r => require.ensure([], () => r(require('../views/Home')), 'group-main')
 const CampusManage = r => require.ensure([], () => r(require('../views/main/CampusManage')), 'group-main')
-const ClassManage = r => require.ensure([], () => r(require('../views/main/ClassManage')), 'group-main')
 const ClassroomManage = r => require.ensure([], () => r(require('../views/main/ClassroomManage')), 'group-main')
-const ClassTypeManage = r => require.ensure([], () => r(require('../views/main/ClassTypeManage')), 'group-main')
-const CourseManage = r => require.ensure([], () => r(require('../views/main/CourseManage')), 'group-main')
-const PurchaseManage = r => require.ensure([], () => r(require('../views/main/PurchaseManage')), 'group-main')
 const RoleManage = r => require.ensure([], () => r(require('../views/main/RoleManage')), 'group-main')
-const StudentManage = r => require.ensure([], () => r(require('../views/main/StudentManage')), 'group-main')
-const SubjectManage = r => require.ensure([], () => r(require('../views/main/SubjectManage')), 'group-main')
 const TeacherManage = r => require.ensure([], () => r(require('../views/main/TeacherManage')), 'group-main')
-const ScheduleManage = r => require.ensure([], () => r(require('../views/main/ScheduleManage')), 'group-main')
 
 Vue.use(Router)
 
@@ -65,55 +58,6 @@ const router = new Router({
           name: 'teachermanage',
           alias: '/teacher-manage',
           component: TeacherManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'classtype-manage',
-          name: 'classtypemanage',
-          alias: '/classtype-manage',
-          component: ClassTypeManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'class-manage',
-          name: 'classmanage',
-          alias: '/class-manage',
-          component: ClassManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'subject-manage',
-          name: 'subjectmanage',
-          alias: '/subject-manage',
-          component: SubjectManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'course-manage',
-          name: 'coursemanage',
-          alias: '/course-manage',
-          component: CourseManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'student-manage',
-          name: 'studentmanage',
-          alias: '/student-manage',
-          component: StudentManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'purchase-manage',
-          name: 'purchasemanage',
-          alias: '/purchase-manage',
-          component: PurchaseManage,
-          meta: { requiresAuth: true }
-        },
-        {
-          path: 'schedule-manage',
-          name: 'schedulemanage',
-          alias: '/schedule-manage',
-          component: ScheduleManage,
           meta: { requiresAuth: true }
         }
       ]

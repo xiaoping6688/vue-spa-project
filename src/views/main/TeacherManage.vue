@@ -2,7 +2,7 @@
   <div>
     <c-breadcrumb :items="breadcrumb"></c-breadcrumb>
     <div>
-      <el-row>
+      <el-row type="flex" :gutter="10">
         <el-col :span="2"><span class="textspan">教师姓名</span></el-col>
         <el-col :span="4">
           <el-input placeholder="请输入教师姓名" v-model="searchInput" class="queryinput"></el-input>
@@ -43,14 +43,14 @@
             <el-col :span="8">
             <el-form-item label="校区" :label-width="formLabelWidth">
             <el-select v-model="addTeacherForm.campusSelected" placeholder="请选择校区">
-              <el-option v-for="item in addTeacherForm.campusList" :label="item.name" :value="item.id"></el-option>
+              <el-option v-for="item in addTeacherForm.campusList" :label="item.name" :value="item.id" :key="item.id"></el-option>
             </el-select>
           </el-form-item>
           </el-col>
           <el-col :span="8">
             <el-form-item label="年级" :label-width="formLabelWidth">
             <el-select v-model="addTeacherForm.gradeSelected" placeholder="请选择年级">
-              <el-option v-for="item in addTeacherForm.gradeList" :label="item.name" :value="item.id"></el-option>
+              <el-option v-for="item in addTeacherForm.gradeList" :label="item.name" :value="item.id" :key="item.id"></el-option>
             </el-select>
           </el-form-item>
           </el-col>
@@ -59,7 +59,7 @@
           <el-col :span="8">
             <el-form-item label="科目" :label-width="formLabelWidth">
             <el-select v-model="addTeacherForm.subjectSelected" placeholder="请选择科目">
-            <el-option v-for="item in addTeacherForm.subjectList" :label="item.name" :value="item.id">
+            <el-option v-for="item in addTeacherForm.subjectList" :label="item.name" :value="item.id" :key="item.id">
             </el-option>
           </el-select>
           </el-form-item>
@@ -67,7 +67,7 @@
           <el-col :span="8">
             <el-form-item label="角色" :label-width="formLabelWidth">
             <el-select v-model="addTeacherForm.roleSelected" placeholder="请选择角色">
-            <el-option v-for="item in addTeacherForm.roleList" :label="item.name" :value="item.id">
+            <el-option v-for="item in addTeacherForm.roleList" :label="item.name" :value="item.id" :key="item.id">
             </el-option>
           </el-select>
           </el-form-item>
@@ -172,46 +172,46 @@ export default {
   created () {
     teacherService.getTeachers(this.$store.state.account.userId).then(data => {
       this.teacherData = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
 
     campusService.getRegions(this.$store.state.account.userId).then(data => {
       this.addTeacherForm.campusList = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
 
     commonService.getGrades(this.$store.state.account.userId).then(data => {
       this.addTeacherForm.gradeList = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
 
     subjectService.getSubjects(this.$store.state.account.userId).then(data => {
       this.addTeacherForm.subjectList = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
 
     roleService.getRoles(this.$store.state.account.userId).then(data => {
       this.addTeacherForm.roleList = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
   },
@@ -263,8 +263,8 @@ export default {
 
         this.addTeacherDialogVisible = false
         this.addTeacherForm.isLoading = false
-      }, msg => {
-        this.$message.error(msg)
+      }, err => {
+        this.$message.error(err.message)
         this.addTeacherForm.isLoading = false
       })
     }

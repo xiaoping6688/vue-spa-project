@@ -23,20 +23,20 @@ export function httpResultProxy (resultPromise, VO = null) {
         if (res.rlt === 'true') {
           resolve(mapVO(VO, res.data))
         } else {
-          reject(res.msg)
+          reject(new Error(res.msg))
         }
       } else {
-        reject('服务器返回数据异常')
+        reject(new Error('服务器返回数据异常'))
       }
     }, (error) => {
       throw error
     }).catch(error => {
       if (error.response) {
         // throw new Error('服务器异常！')
-        reject('服务器异常！')
+        reject(new Error('服务器异常！'))
       } else {
         // throw new Error('系统异常！')
-        reject('系统异常！')
+        reject(new Error('服务器异常！'))
       }
     })
   })

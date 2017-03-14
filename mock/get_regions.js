@@ -8,9 +8,9 @@ module.exports = {
       rlt: 'true',
       msg: 'ok',
       data: [
-        { id: faker.random.uuid(), name: faker.random.words() },
-        { id: faker.random.uuid(), name: faker.random.words() },
-        { id: faker.random.uuid(), name: faker.random.words() }
+        { campus_id: faker.random.uuid(), campus_name: faker.address.city() },
+        { campus_id: faker.random.uuid(), campus_name: faker.address.city() },
+        { campus_id: faker.random.uuid(), campus_name: faker.address.city() }
       ]
     })
   }

@@ -6,7 +6,7 @@ export default class RoleVO {
   constructor (data) {
     data = data || {}
 
-    this.id = data.id || ''
-    this.name = data.name || ''
+    this.id = data.role_id || ''
+    this.name = data.role_name || ''
   }
 }

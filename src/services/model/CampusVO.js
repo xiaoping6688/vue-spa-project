@@ -6,7 +6,7 @@ export default class CampusVO {
   constructor (data) {
     data = data || {}
 
-    this.id = data.id || ''
-    this.name = data.name || ''
+    this.id = data.campus_id || ''
+    this.name = data.campus_name || ''
   }
 }

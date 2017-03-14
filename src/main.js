@@ -20,7 +20,7 @@ const app = new Vue({
   router,
   store,
   el: '#app',
-  template: '<app/>',
+  template: '<App/>',
   components: { App }
 })
 

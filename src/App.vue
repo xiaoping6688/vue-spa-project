@@ -7,7 +7,7 @@
 
 <script>
   import { mapState } from 'vuex'
-  import CPageprogress from 'components/PageProgress'
+  import CPageprogress from '@/components/PageProgress'
 
   // 引入重置样式
   import 'normalize.css'
@@ -16,7 +16,7 @@
   import './assets/common.scss'
 
   // 引入组件库
-  import 'components/UIComponents'
+  import '@/components/UIComponents'
 
   export default {
     name: 'app',

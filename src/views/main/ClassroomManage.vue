@@ -2,18 +2,18 @@
   <div>
     <c-breadcrumb :items="breadcrumb"></c-breadcrumb>
     <div>
-      <el-row>
+      <el-row type="flex" :gutter="10">
         <el-col :span="2"><span class="textspan">校区</span></el-col>
         <el-col :span="4">
           <el-select v-model="campusSelected" @change="onCampusSelected" placeholder="请选择校区">
-            <el-option v-for="item in campusList" :label="item.name" :value="item.id">
+            <el-option v-for="item in campusList" :label="item.name" :value="item.id" :key="item.id">
             </el-option>
           </el-select>
         </el-col>
         <el-col :span="2"><span class="textspan">服务中心</span></el-col>
         <el-col :span="4">
           <el-select v-model="schoolSelected" placeholder="请选择服务中心">
-            <el-option v-for="item in schoolList" :label="item.name" :value="item.id">
+            <el-option v-for="item in schoolList" :label="item.name" :value="item.id" :key="item.id">
             </el-option>
           </el-select>
         </el-col>
@@ -46,13 +46,13 @@
           <el-form :model="addClassroomForm" ref="addClassroomForm" :rules="formRules">
             <el-form-item label="校区名称" prop="campusSelected" :label-width="formLabelWidth">
               <el-select v-model="addClassroomForm.campusSelected" @change="onFormCampusSelected" placeholder="请选择校区">
-                <el-option v-for="item in campusList" :label="item.name" :value="item.id">
+                <el-option v-for="item in campusList" :label="item.name" :value="item.id" :key="item.id">
                 </el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="服务中心" prop="schoolSelected" :label-width="formLabelWidth">
               <el-select v-model="addClassroomForm.schoolSelected" placeholder="请选择服务中心">
-                <el-option v-for="item in addClassroomForm.schoolList" :label="item.name" :value="item.id"></el-option>
+                <el-option v-for="item in addClassroomForm.schoolList" :label="item.name" :value="item.id" :key="item.id"></el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="教室名称" prop="classroomName" :label-width="formLabelWidth">
@@ -125,10 +125,10 @@ export default {
   created () {
     campusService.getRegions(this.$store.state.account.userId).then(data => {
       this.campusList = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
     })
   },
@@ -160,8 +160,8 @@ export default {
             classroom.name = this.addClassroomForm.classroomName
             this.classroomData.push(classroom)
             this.addClassroomForm.isLoading = false
-          }, msg => {
-            this.$message.error(msg)
+          }, err => {
+            this.$message.error(err.message)
             this.addClassroomForm.isLoading = false
           })
         } else {
@@ -173,10 +173,10 @@ export default {
       if (value === '') return
       campusService.getSchools(value).then(data => {
         this.schoolList = data
-      }, msg => {
+      }, err => {
         this.$notify.error({
           title: '错误',
-          message: msg
+          message: err.message
         })
       })
     },
@@ -184,10 +184,10 @@ export default {
       if (value === '') return
       campusService.getSchools(value).then(data => {
         this.addClassroomForm.schoolList = data
-      }, msg => {
+      }, err => {
         this.$notify.error({
           title: '错误',
-          message: msg
+          message: err.message
         })
       })
     },
@@ -204,9 +204,9 @@ export default {
       classroomService.getClassrooms(this.schoolSelected).then(data => {
         this.classroomData = data
         this.classroomDataLoading = false
-      }, msg => {
+      }, err => {
         this.classroomDataLoading = false
-        this.$message.error(msg)
+        this.$message.error(err.message)
       })
     }
   },

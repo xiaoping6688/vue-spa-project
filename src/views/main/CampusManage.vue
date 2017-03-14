@@ -2,7 +2,7 @@
   <div>
     <c-breadcrumb :items="breadcrumb"></c-breadcrumb>
     <div>
-      <el-row>
+      <el-row type="flex" :gutter="10">
         <el-col :span="2">
           <span class="textspan">校区</span>
         </el-col>
@@ -109,10 +109,10 @@ export default {
     campusService.getRegions(this.$store.state.account.userId).then(data => {
       this.campusDataLoading = false
       this.campusData = data
-    }, msg => {
+    }, err => {
       this.$notify.error({
         title: '错误',
-        message: msg
+        message: err.message
       })
       this.campusDataLoading = false
     })
@@ -140,8 +140,8 @@ export default {
               type: 'success'
             })
             this.addSchoolForm.isLoading = false
-          }, msg => {
-            this.$message.error(msg)
+          }, err => {
+            this.$message.error(err.message)
             this.addSchoolForm.isLoading = false
           })
         } else {
@@ -171,8 +171,8 @@ export default {
             campus.id = data
             campus.name = this.addCampusForm.name
             this.campusData.push(campus)
-          }, msg => {
-            this.$message.error(msg)
+          }, err => {
+            this.$message.error(err.message)
             this.addCampusForm.isLoading = false
           })
         } else {
