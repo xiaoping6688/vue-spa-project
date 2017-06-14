@@ -18,6 +18,7 @@ Webpack（自动构建）
 - 前端mock数据，无需等待后端接口实现
 - 测试服务器自动部署deploy（需要在服务器上启动一个node写的接收脚本:[file-receiver](https://github.com/xiaoping6688/file-receiver)）
 
+如果需要服务端渲染(SSR)，推荐使用：[NUXT](https://zh.nuxtjs.org/)
 
 ## Build Setup
 
