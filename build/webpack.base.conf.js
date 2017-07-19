@@ -14,6 +14,7 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
+    chunkFilename: '[name].chunk.js', // 可选，webpack v2.4 的新功能，可以设置 chunk 的名字
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath

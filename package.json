@@ -1,6 +1,6 @@
 {
   "name": "vue-spa-project",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "基于Vue.js技术栈的管理系统Demo",
   "author": "super_xp@126.com",
   "keywords": [
@@ -43,6 +43,7 @@
     "babel-loader": "^7.1.1",
     "babel-plugin-component": "^0.10.0",
     "babel-plugin-istanbul": "^4.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",

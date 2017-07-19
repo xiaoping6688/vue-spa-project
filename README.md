@@ -3,9 +3,9 @@
 
 技术栈
 
-- vue.js（2.0）
+- vue.js（2.4）
 - vuex（状态管理）
-- vue-router（前端路由）
+- vue-router（前端路由，异步加载）
 - fetch（ajax的替代技术，更加高效地进行网络请求）
 - element-ui（基于vue的PC端UI组件库）
 

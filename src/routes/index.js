@@ -7,15 +7,27 @@ import Router from 'vue-router'
 import store from '../store'
 
 // 异步组件实现路由懒加载
-const Login = resolve => require(['../views/Login'], resolve)
-const Regist = resolve => require(['../views/Regist'], resolve)
-const NotFound = resolve => require(['../views/NotFound'], resolve)
+// const Login = resolve => require(['../views/Login'], resolve)
+// const Regist = resolve => require(['../views/Regist'], resolve)
+// const NotFound = resolve => require(['../views/NotFound'], resolve)
+
 // 组件按组分块
-const Home = r => require.ensure([], () => r(require('../views/Home')), 'group-main')
-const CampusManage = r => require.ensure([], () => r(require('../views/main/CampusManage')), 'group-main')
-const ClassroomManage = r => require.ensure([], () => r(require('../views/main/ClassroomManage')), 'group-main')
-const RoleManage = r => require.ensure([], () => r(require('../views/main/RoleManage')), 'group-main')
-const TeacherManage = r => require.ensure([], () => r(require('../views/main/TeacherManage')), 'group-main')
+// const Home = r => require.ensure([], () => r(require('../views/Home')), 'group-main')
+// const CampusManage = r => require.ensure([], () => r(require('../views/main/CampusManage')), 'group-main')
+// const ClassroomManage = r => require.ensure([], () => r(require('../views/main/ClassroomManage')), 'group-main')
+// const RoleManage = r => require.ensure([], () => r(require('../views/main/RoleManage')), 'group-main')
+// const TeacherManage = r => require.ensure([], () => r(require('../views/main/TeacherManage')), 'group-main')
+
+// Webpack 2 + ES2015 写法，可设置 Chunk 名
+const Login = () => import(/* webpackChunkName: 'Login' */ '../views/Login')
+const Regist = () => import(/* webpackChunkName: 'Regist' */ '../views/Regist')
+const NotFound = () => import('../views/NotFound')
+
+const Home = () => import(/* webpackChunkName: 'group-main' */ '../views/Home')
+const CampusManage = () => import(/* webpackChunkName: 'group-main' */ '../views/main/CampusManage')
+const ClassroomManage = () => import(/* webpackChunkName: 'group-main' */ '../views/main/ClassroomManage')
+const RoleManage = () => import(/* webpackChunkName: 'group-main' */ '../views/main/RoleManage')
+const TeacherManage = () => import(/* webpackChunkName: 'group-main' */ '../views/main/TeacherManage')
 
 Vue.use(Router)
 
