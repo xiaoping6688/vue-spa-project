@@ -43,7 +43,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
-    new OptimizeCSSPlugin(),
+    new OptimizeCSSPlugin({
+      cssProcessorOptions: {
+        safe: true
+      }
+    }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
@@ -116,6 +120,16 @@ if (config.build.productionGzip) {
 if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+}
+
+// deploy to server
+if (process.env.COMMAND_ENV === 'deploy') {
+  var DeployPlugin = require('deploy-webpack-plugin')
+  webpackConfig.plugins.push(new DeployPlugin({
+    "receiver": "http://ip:8999/receiver", // optional, deploy to local directory when omitted
+    "staticDir": "/data/webapps", // .js,.css,images will end up here
+    "tplDir": "/data/webapps" // .html ends up here
+  }))
 }
 
 module.exports = webpackConfig
