@@ -6,7 +6,7 @@
 - vue.js（2.4）
 - vuex（状态管理）
 - vue-router（前端路由，异步加载）
-- fetch（ajax的替代技术，更加高效地进行网络请求）
+- fetch（替代ajax，更高效地进行网络请求）
 - element-ui（基于vue的PC端UI组件库）
 
 
@@ -16,7 +16,7 @@ Webpack（自动构建）
 - ESlint代码质量控制，所有代码编写必须按照标准规范才能通过编译，并避免一些低级错误
 - 本地开发服务器会监听文件修改，自动编译和刷新浏览器
 - 前端mock数据，无需等待后端接口实现
-- 测试服务器自动部署deploy（需要在服务器上启动一个node写的接收脚本:[file-receiver](https://github.com/xiaoping6688/file-receiver)）
+- 测试服务器自动部署deploy（需要在服务器上启动一个node写的接收脚本: [file-receiver](https://github.com/xiaoping6688/file-receiver)）
 
 如果需要服务端渲染(SSR)，推荐使用：[NUXT](https://zh.nuxtjs.org/)
 
